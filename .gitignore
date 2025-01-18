@@ -23,7 +23,6 @@ target/
 src/main/java/ru/sasha/spring/dao
 src/main/java/ru/sasha/spring/util
 src/main/resources
-src/main/webapp/WEB-INF/views
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
