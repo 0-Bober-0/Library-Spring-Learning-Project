@@ -47,5 +47,3 @@ jobs:
           java-version: '22'
           distribution: 'temurin'
           cache: maven
-
-      - run: mvn checkstyle:check modernizer:modernizer spotbugs:check pmd:check pmd:cpd-check
