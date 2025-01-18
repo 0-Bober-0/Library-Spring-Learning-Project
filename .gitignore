@@ -21,7 +21,6 @@ target/
 .springBeans
 .sts4-cache
 src/main/java/ru/sasha/spring/util
-src/main/resources
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
