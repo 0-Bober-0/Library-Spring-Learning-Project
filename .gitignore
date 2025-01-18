@@ -22,7 +22,6 @@ target/
 .sts4-cache
 src/main/java/ru/sasha/spring/controllers
 src/main/java/ru/sasha/spring/dao
-src/main/java/ru/sasha/spring/models
 src/main/java/ru/sasha/spring/util
 src/main/resources
 src/main/webapp/WEB-INF/views
