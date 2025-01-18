@@ -1,0 +1,41 @@
+name: library-project
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/project1
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    container_name: postgres-container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: project1
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./pg_hba.conf:/etc/postgresql/pg_hba.conf
+    restart: always
+
+  adminer:
+    image: adminer
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  db_data:
+    driver: local
