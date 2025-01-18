@@ -20,7 +20,6 @@ target/
 .settings
 .springBeans
 .sts4-cache
-src/main/java/ru/sasha/spring/dao
 src/main/java/ru/sasha/spring/util
 src/main/resources
 ### NetBeans ###
