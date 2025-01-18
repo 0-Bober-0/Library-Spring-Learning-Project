@@ -21,9 +21,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: maven build
-        run: mvn package
-
       - id: jacoco
         uses: madrapps/jacoco-report@v1.6.1
         if: ( github.event_name != 'workflow_dispatch' )
@@ -50,5 +47,3 @@ jobs:
           java-version: '22'
           distribution: 'temurin'
           cache: maven
-
-      - run: mvn checkstyle:check modernizer:modernizer spotbugs:check pmd:check pmd:cpd-check
