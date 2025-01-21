@@ -13,7 +13,6 @@ target/
 *.ipr
 Dockerfile
 docker-compose.yml
-src/main/webapp
 ### Eclipse ###
 .apt_generated
 .classpath
