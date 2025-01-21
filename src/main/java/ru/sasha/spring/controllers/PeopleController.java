@@ -28,7 +28,7 @@ public class PeopleController {
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute(String.valueOf(PeopleControllerHelper.people), personDAO.index());
+        model.addAttribute(PeopleControllerHelper.people.getTitle(), personDAO.index());
         return "people/index";
     }
 
@@ -40,13 +40,14 @@ public class PeopleController {
     @PostMapping()
     public String create(@ModelAttribute("person") Person person) {
         personDAO.save(person);
-        return String.valueOf(PeopleControllerHelper.redirect);
+        return PeopleControllerHelper.redirect.getTitle();
     }
 
     @GetMapping("/{id}/edit")
     public String edit(Model model,
-                       @PathVariable("id") int id) {
-        model.addAttribute(String.valueOf(PeopleControllerHelper.people), personDAO.show(id));
+                       @PathVariable("id") int id,
+                       @ModelAttribute("person") Person person) {
+        model.addAttribute((PeopleControllerHelper.people.getTitle()), personDAO.show(id));
         return "people/edit";
     }
 
@@ -55,13 +56,13 @@ public class PeopleController {
                          @PathVariable("id") int id) {
 
         personDAO.update(id, person);
-        return String.valueOf(PeopleControllerHelper.redirect);
+        return PeopleControllerHelper.redirect.getTitle();
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
         personDAO.delete(id);
-        return String.valueOf(PeopleControllerHelper.redirect);
+        return PeopleControllerHelper.redirect.getTitle();
     }
 
     @GetMapping("/{id}")
@@ -72,5 +73,4 @@ public class PeopleController {
         model.addAttribute("books", bookDAO.getBooks(id));
         return "people/show";
     }
-
 }

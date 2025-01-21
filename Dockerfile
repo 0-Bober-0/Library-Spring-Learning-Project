@@ -6,7 +6,8 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-RUN mvn package -DskipTests # или 'mvn install'
+RUN mvn clean
+RUN mvn package install
 
 # Этап запуска (runner)
 FROM tomcat:9.0-jre11-temurin-focal

@@ -30,7 +30,7 @@ public class BooksController {
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute(String.valueOf(BooksControllerHelper.book), bookDAO.index());
+        model.addAttribute(BooksControllerHelper.book.getTitle(), bookDAO.index());
         return "books/index";
     }
 
@@ -42,7 +42,7 @@ public class BooksController {
     @PostMapping()
     public String create(@ModelAttribute("book") Book book) {
         bookDAO.save(book);
-        return String.valueOf(BooksControllerHelper.redirect);
+        return BooksControllerHelper.redirect.getTitle();
     }
 
     @GetMapping("/{id}")
@@ -50,7 +50,7 @@ public class BooksController {
                        Model model,
                        @ModelAttribute("person") Person person) {
 
-        model.addAttribute(String.valueOf(BooksControllerHelper.book), bookDAO.show(id));
+        model.addAttribute(BooksControllerHelper.book.getTitle(), bookDAO.show(id));
 
         Optional<Person> bookOwner = bookDAO.getBookOwner(id);
 
@@ -73,20 +73,20 @@ public class BooksController {
     public String update(@ModelAttribute("book") Book book,
                          @PathVariable("id") int id) {
         bookDAO.update(id, book);
-        return String.valueOf(BooksControllerHelper.redirect);
+        return BooksControllerHelper.redirect.getTitle();
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
         bookDAO.delete(id);
-        return "redirect:/books";
+        return BooksControllerHelper.redirect.getTitle();
     }
 
     @PatchMapping("/{id}/release")
     public String release(@ModelAttribute("book") Book book,
                           @PathVariable("id") int id) {
         bookDAO.release(id);
-        return BooksControllerHelper.redirect + "/" + id;
+        return BooksControllerHelper.redirect.getTitle() + "/" + id;
     }
 
     @PatchMapping("/{id}/assign")
@@ -94,6 +94,6 @@ public class BooksController {
                          @PathVariable("id") int id) {
 
         bookDAO.assign(id, person);
-        return BooksControllerHelper.redirect + "/" + id;
+        return BooksControllerHelper.redirect.getTitle() + "/" + id;
     }
 }

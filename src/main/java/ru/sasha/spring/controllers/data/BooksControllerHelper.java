@@ -7,5 +7,9 @@ public enum BooksControllerHelper {
     book("book"),
     redirect("redirect:/books");
 
-    BooksControllerHelper(String s) {}
+    @Getter private String title;
+
+    BooksControllerHelper(String title) {
+        this.title = title;
+    }
 }

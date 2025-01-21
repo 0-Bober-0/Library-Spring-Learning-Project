@@ -11,7 +11,9 @@ target/
 *.iws
 *.iml
 *.ipr
-
+Dockerfile
+docker-compose.yml
+src/main/webapp
 ### Eclipse ###
 .apt_generated
 .classpath

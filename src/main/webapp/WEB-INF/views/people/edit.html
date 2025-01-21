@@ -9,12 +9,12 @@
 <form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
     <label for="name">Введите ФИО: </label>
     <input type="text" th:field="*{fullName}" id="name"/>
-    <div style="color:red" th:if="${#fields.hasErrors('full_name')}" th:errors="*{fullName}">Name error</div>
+    <div style="color:red" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}">Name error</div>
     <br/>
 
     <label for="age">Введите год рождения: </label>
     <input type="text" th:field="*{yearOfBirth}" id="age"/>
-    <div style="color:red" th:if="${#fields.hasErrors('year_of_birth')}" th:errors="*{yearOfBirth}">Age error</div>
+    <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Age error</div>
     <br/>
 
     <input type="submit" value="Редактировать!"/>
