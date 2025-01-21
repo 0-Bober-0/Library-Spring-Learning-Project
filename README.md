@@ -32,13 +32,24 @@
     ```bash
     cd Library-Spring-Learning-Project
     ```
-3. Соберите проект с помощью Maven:
-    ```bash
-    mvn clean install
-    mvn package install
-    ```
-4. Запустите проект с помощью Docker:
+3. Запустите проект с помощью Docker:
    ```bash
    docker-compose up
     ```
 ## Скриншоты работы
+![image](https://github.com/user-attachments/assets/facaba5a-d78d-4d31-b137-230c58a2b8b6)
+
+![image](https://github.com/user-attachments/assets/855bf921-d583-4a27-a718-46b395e628f2)
+
+![image](https://github.com/user-attachments/assets/50292b8d-1d56-44ef-a53e-a600d43ef320)
+
+![image](https://github.com/user-attachments/assets/12a031e8-93ae-46d8-b3d9-6c1cabb4e2f9)
+
+![image](https://github.com/user-attachments/assets/af348709-cebd-4823-b266-15381de5c536)
+
+![image](https://github.com/user-attachments/assets/b27cffac-5c63-4558-a58e-27a6b1af468e)
+
+![image](https://github.com/user-attachments/assets/d89df0c2-9080-4768-ac00-288708eef075)
+
+![image](https://github.com/user-attachments/assets/18409f16-dee5-42e8-8d9c-1160472a8abd)
+
