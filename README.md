@@ -1,4 +1,4 @@
-﻿# Library
+# Библиотека
  
 ## Описание
 Проект выполнен в рамках курса Spring - Полный курс. Boot, Hibernate, Security, REST.
