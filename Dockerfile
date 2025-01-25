@@ -9,7 +9,7 @@ RUN mvn clean
 
 RUN mvn package install
 
-FROM tomcat:9.0-jre11-temurin-focal
+FROM tomcat:10.1-jdk17-temurin-focal
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
